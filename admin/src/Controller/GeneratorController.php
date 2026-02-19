@@ -18,7 +18,7 @@ class GeneratorController extends BaseController
         // Check token
         $this->checkToken();
 
-        $app   = $this->getApplication();
+        $app   = $this->app;
         $input = $app->getInput();
         $data  = $input->get('jform', [], 'array');
         $type  = $input->get('type', 'component');
