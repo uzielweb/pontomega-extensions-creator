@@ -94,5 +94,6 @@
 	</div>
 
 	<input type="hidden" name="type" value="plugin">
+	<input type="hidden" name="task" value="generator.generate">
 	<?php echo HTMLHelper::_('form.token'); ?>
 </form>
