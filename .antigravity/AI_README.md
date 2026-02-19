@@ -1,69 +1,35 @@
 # AI Context & Instructions - Pontomega Extensions Creator
 
 ## 🧠 Project Overview
-**Pontomega Extensions Creator** is a native Joomla 6 component (`com_extensionscreator`) that generates boilerplates for other Joomla extensions. It is designed to run on Joomla 5.x and 6.x.
+**Pontomega Extensions Creator** is a native Joomla 6 component (`com_extensionscreator`) that generates boilerplates for other Joomla extensions.
 
 ## 🏗️ Technical Architecture
 -   **Framework**: Joomla CMS (Native MVC).
 -   **Namespace**: `Pontomega\Component\ExtensionsCreator`.
--   **Dependency Injection**: Fully implemented via `admin/services/provider.php`.
+-   **Dependency Injection**: `admin/services/provider.php`.
 -   **Frontend**: Bootstrap 5 (Native Joomla 4/5/6 styling).
 
-## 📂 Directory Structure (Generic Map)
+## 📂 Key Files
 -   `extensionscreator.xml`: Main manifest.
--   `updates.xml`: Update server definition.
--   `test_gen.php`: **CRITICAL**. CLI script to verify generation logic without installing the component.
--   `admin/`:
-    -   `services/`: DI Container configuration.
-    -   `src/`: PHP Classes (PSR-4).
-        -   `Controller/`: Handles input (Display, Generate).
-        -   `Generator/`: **Core Logic**. Classes that replace placeholders and write files.
-        -   `Helper/`: Utilities (e.g., `ZipHelper`).
-    -   `tmpl/`:
-        -   `dashboard/`, `component/`: Backend UI Views.
-        -   `generator/`: **SKELETONS**. These are the template files copied to generate new extensions.
-    -   `language/`: `en-GB` and `pt-BR` INI files.
+-   `test_gen.php`: **CRITICAL**. CLI script to verify generation logic. Run `php test_gen.php` after changes to generators.
+-   `admin/src/Generator/`: Core logic classes.
+-   `admin/tmpl/generator/`: Skeleton templates (with `{{placeholders}}`).
 
-## ⚙️ Development Flow (Start to Finish)
-
-### 1. Understanding the Logic
-The core logic resides in `admin/src/Generator/`.
--   `ComponentGenerator.php`: Handles generating components.
--   `ModuleGenerator.php`: Handles modules.
--   Etc.
-
-These classes read files from `admin/tmpl/generator/[type]`, replace `{{placeholders}}` (like `{{element}}`, `{{namespace}}`), and write them to the output buffer/zip.
-
-### 2. Modifying the Output (Boilerplates)
-If you want to change the *code that is generated* (e.g., add a method to the generated controller):
--   **DO NOT** edit `src/Generator`.
--   **EDIT** `admin/tmpl/generator/[type]/path/to/file.php`.
-
-### 3. Testing (Verification)
-**Always** use the CLI script before testing in a live Joomla site.
-```bash
-php test_gen.php
-```
-This script acts as a mock Joomla environment. It generates extensions into `admin/output/` and verifies if they zip correctly.
--   If `test_gen.php` fails, the feature is broken.
--   If `test_gen.php` passes, verify the contents of `admin/output/`.
-
-### 4. Localization
--   Always use `Text::_('KEY')` in PHP files.
--   Import: `use Joomla\CMS\Language\Text;`
--   Add keys to:
-    -   `admin/language/en-GB/com_extensionscreator.ini`
-    -   `admin/language/pt-BR/com_extensionscreator.ini`
-
-### 5. Release Workflow
-1.  **Bump Version**: Update `<version>` in `extensionscreator.xml` and `updates.xml`.
-2.  **Commit**: `git commit -m "Bump version to X.Y.Z"`.
-3.  **Tag**: `git tag vX.Y.Z`.
-4.  **Push**: `git push origin master --tags`.
-5.  **Release**: Create a GitHub Release linked to the tag.
-
-## 🤖 AI Rules & Conventions
+## ⚙️ Development Rules
 1.  **Joomla Standards**: Follow PSR-12 and Joomla coding standards.
-2.  **No Legacy**: Do not use `JModelLegacy`, `JFactory`, etc. Use DI and `MVCFactory`.
-3.  **Security**: Inspect `manifest` files for security issues.
-4.  **Idempotency**: The `test_gen.php` script handles cleanup locally, but ensure generators can overwrite if needed.
+2.  **No Legacy**: Do not use `JModelLegacy`, `JFactory`. Use DI and `MVCFactory`.
+3.  **Localization**:
+    -   Always use `Joomla\CMS\Language\Text::_('KEY')`.
+    -   **Import**: `use Joomla\CMS\Language\Text;`
+    -   **Do not use**: `JText::_()`.
+4.  **Testing**: Always run `php test_gen.php` to verify changes.
+5.  **Release Workflow**:
+    -   Bump version in `extensionscreator.xml` and `updates.xml`.
+    -   Commit -> Tag (vX.Y.Z) -> Push -> Release.
+
+## 🤖 Instructions for AI Agents (Antigravity)
+-   **Task Management**: Use `task_boundary` to track progress. Update `task.md` concurrently.
+-   **Planning**: Create `implementation_plan.md` for significant changes.
+-   **Verification**: Create `walkthrough.md` after verifying features.
+-   **Code Modification**: When modifying generators, EDIT THE TEMPLATES in `admin/tmpl/generator/`, not the generator logic (unless logic changes).
+-   **Verification Script**: Use `test_gen.php` as your primary verification tool before manual testing.
