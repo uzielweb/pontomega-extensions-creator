@@ -5,36 +5,36 @@
 ?>
 <div class="row">
 	<div class="col-md-12">
-		<h1>Pontomega Extensions Creator</h1>
-		<p class="lead">Welcome to the Extensions Creator for Joomla 6. Choose an extension type to create:</p>
+		<h1><?php echo JText::_('COM_EXTENSIONSCREATOR'); ?></h1>
+		<p class="lead"><?php echo JText::_('COM_EXTENSIONSCREATOR_XML_DESCRIPTION'); ?></p>
 
 		<div class="card-columns">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Component</h5>
-					<p class="card-text">Create a full MVC Component.</p>
-					<a href="index.php?option=com_extensionscreator&view=component" class="btn btn-primary">Create Component</a>
+					<h5 class="card-title"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_COMPONENT'); ?></h5>
+					<p class="card-text"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_COMPONENT_DESC'); ?></p>
+					<a href="index.php?option=com_extensionscreator&view=component" class="btn btn-primary"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_COMPONENT'); ?></a>
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Module</h5>
-					<p class="card-text">Create a Site or Admin Module.</p>
-					<a href="index.php?option=com_extensionscreator&view=module" class="btn btn-primary">Create Module</a>
+					<h5 class="card-title"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_MODULE'); ?></h5>
+					<p class="card-text"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_MODULE_DESC'); ?></p>
+					<a href="index.php?option=com_extensionscreator&view=module" class="btn btn-primary"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_MODULE'); ?></a>
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Plugin</h5>
-					<p class="card-text">Create a Plugin for any group.</p>
-					<a href="index.php?option=com_extensionscreator&view=plugin" class="btn btn-primary">Create Plugin</a>
+					<h5 class="card-title"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_PLUGIN'); ?></h5>
+					<p class="card-text"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_PLUGIN_DESC'); ?></p>
+					<a href="index.php?option=com_extensionscreator&view=plugin" class="btn btn-primary"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_PLUGIN'); ?></a>
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Template</h5>
-					<p class="card-text">Create a Site or Admin Template.</p>
-					<a href="index.php?option=com_extensionscreator&view=template" class="btn btn-primary">Create Template</a>
+					<h5 class="card-title"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_TEMPLATE'); ?></h5>
+					<p class="card-text"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_TEMPLATE_DESC'); ?></p>
+					<a href="index.php?option=com_extensionscreator&view=template" class="btn btn-primary"><?php echo JText::_('COM_EXTENSIONSCREATOR_CREATE_TEMPLATE'); ?></a>
 				</div>
 			</div>
 		</div>

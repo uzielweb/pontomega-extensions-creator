@@ -19,6 +19,7 @@
 	<administration>
 		<menu>COM_EXTENSIONSCREATOR</menu>
 		<files folder="admin/">
+			<folder>language</folder>
 			<folder>services</folder>
 			<folder>src</folder>
 			<folder>tmpl</folder>
