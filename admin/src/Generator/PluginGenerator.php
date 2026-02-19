@@ -57,6 +57,9 @@ class PluginGenerator extends BaseGenerator
         $providerContent = $this->replaceTags($providerContent, $replacements);
         $this->createFile($basePath . '/services/provider.php', $providerContent);
 
+        // Ensure src folder exists
+        $this->createFile($basePath . '/src/index.html', '');
+
         return true;
     }
 }

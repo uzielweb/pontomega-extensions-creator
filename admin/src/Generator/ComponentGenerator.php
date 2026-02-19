@@ -48,6 +48,10 @@ class ComponentGenerator extends BaseGenerator
         $providerContent = $this->replaceTags($providerContent, $replacements);
         $this->createFile($basePath . '/admin/services/provider.php', $providerContent);
 
+                                                                   // Generate Site Structure (Required for installation)
+        $this->createFile($basePath . '/site/src/index.html', ''); // Empty file to ensure folder creation
+        $this->createFile($basePath . '/site/tmpl/index.html', '');
+
                                                                   // Generate Views
         $views      = $this->registry->get('views', 'dashboard'); // Default to dashboard if empty, comma separated
         $viewsArray = explode(',', $views);

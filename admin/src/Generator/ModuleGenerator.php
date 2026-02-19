@@ -54,6 +54,9 @@ class ModuleGenerator extends BaseGenerator
         $layoutContent = $this->getTemplate('module/default.php');
         $this->createFile($basePath . '/tmpl/default.php', $layoutContent);
 
+        // Ensure src folder exists
+        $this->createFile($basePath . '/src/index.html', '');
+
         return true;
     }
 }
