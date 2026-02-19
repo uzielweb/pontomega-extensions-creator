@@ -1,6 +1,7 @@
 # IDE / OS
 .idea/
 .vscode/
+.antigravity/
 .DS_Store
 Thumbs.db
 ehthumbs.db
