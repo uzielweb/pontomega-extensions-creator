@@ -9,7 +9,13 @@ class ComponentGenerator extends BaseGenerator
 {
     public function generate()
     {
-        $element       = $this->registry->get('element');             // com_example
+        $element = $this->registry->get('element'); // com_example
+
+        if (strpos($element, 'com_') !== 0) {
+            $element = 'com_' . $element;
+            $this->registry->set('element', $element);
+        }
+
         $name          = substr($element, 4);                         // example
         $vendor        = $this->registry->get('vendor', 'Pontomega'); // Default to Pontomega
         $namespace     = $vendor . '\\Component\\' . ucfirst($name);  // MyCompany\Component\Example

@@ -7,9 +7,13 @@ class TemplateGenerator extends BaseGenerator
 {
     public function generate()
     {
-        $element = $this->registry->get('element');        // tpl_example
-        $client  = $this->registry->get('client', 'site'); // site or admin
-        $name    = substr($element, 4);                    // example
+        $element = $this->registry->get('element'); // tpl_example
+        if (strpos($element, 'tpl_') !== 0) {
+            $element = 'tpl_' . $element;
+            $this->registry->set('element', $element);
+        }
+        $client = $this->registry->get('client', 'site'); // site or admin
+        $name   = substr($element, 4);                    // example
 
         $replacements = [
             'element'      => $element,

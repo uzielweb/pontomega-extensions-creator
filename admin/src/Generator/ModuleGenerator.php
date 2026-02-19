@@ -7,10 +7,14 @@ class ModuleGenerator extends BaseGenerator
 {
     public function generate()
     {
-        $element = $this->registry->get('element');        // mod_example
-        $name    = substr($element, 4);                    // example
-        $client  = $this->registry->get('client', 'site'); // site or admin
-        $vendor  = $this->registry->get('vendor', 'Pontomega');
+        $element = $this->registry->get('element'); // mod_example
+        if (strpos($element, 'mod_') !== 0) {
+            $element = 'mod_' . $element;
+            $this->registry->set('element', $element);
+        }
+        $name   = substr($element, 4);                    // example
+        $client = $this->registry->get('client', 'site'); // site or admin
+        $vendor = $this->registry->get('vendor', 'Pontomega');
 
         $replacements = [
             'element'      => $element,

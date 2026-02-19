@@ -15,6 +15,7 @@ class PluginGenerator extends BaseGenerator
         if (strpos($element, 'plg_') !== 0) {
             $name    = $element;
             $element = 'plg_' . $group . '_' . $name;
+            $this->registry->set('element', $element);
         }
 
         $vendor = $this->registry->get('vendor', 'Pontomega');
