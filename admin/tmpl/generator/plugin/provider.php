@@ -1,6 +1,7 @@
 <?php
 namespace {{namespace }}\Service\Provider;
 
+use Joomla\CMS\Dispatcher\DispatcherFactoryInterface;
 use Joomla\CMS\Extension\PluginInterface;
 use Joomla\CMS\Extension\Service\Provider\Plugin;
 use Joomla\CMS\Extension\Service\Provider\PluginDispatcherFactory;
@@ -22,7 +23,7 @@ return new class implements ServiceProviderInterface
             PluginInterface::class,
             function (Container $container) {
                 $plugin = new {{name}}(
-                    $container->get(PluginDispatcherFactoryInterface::class),
+                    $container->get(DispatcherFactoryInterface::class),
                     (array) Factory::getApplication()->getPlugin('{{group}}', '{{lowerName}}')
                 );
                 $plugin->setApplication(Factory::getApplication());

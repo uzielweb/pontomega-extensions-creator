@@ -18,4 +18,17 @@
         <folder>tmpl</folder>
         <folder>services</folder>
     </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_DESC_LAYOUT" />
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="prepare_content" type="radio" layout="joomla.form.field.radio.switcher" label="COM_MODULES_FIELD_PREPARE_CONTENT_LABEL" description="COM_MODULES_FIELD_PREPARE_CONTENT_DESC" default="0">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
 </extension>
