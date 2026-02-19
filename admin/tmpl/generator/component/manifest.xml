@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+    <name>{{element}}</name>
+    <version>{{version}}</version>
+    <description>{{description}}</description>
+    <author>{{author}}</author>
+    <creationDate>{{creationDate}}</creationDate>
+    <copyright>{{copyright}}</copyright>
+    <license>{{license}}</license>
+    <authorEmail>{{authorEmail}}</authorEmail>
+    <authorUrl>{{authorUrl}}</authorUrl>
+
+    <namespace path="src">{{namespace}}</namespace>
+
+    <files folder="site/">
+        <folder>src</folder>
+    </files>
+
+    <administration>
+        <menu>{{name}}</menu>
+        <files folder="admin/">
+            <folder>services</folder>
+            <folder>src</folder>
+            <folder>tmpl</folder>
+        </files>
+    </administration>
+</extension>

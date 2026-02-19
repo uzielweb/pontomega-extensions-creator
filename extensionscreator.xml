@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_extensionscreator</name>
+	<version>1.0.0</version>
+	<description>COM_EXTENSIONSCREATOR_XML_DESCRIPTION</description>
+	<author>Pontomega</author>
+	<creationDate>2026-02-18</creationDate>
+	<copyright>(C) 2026 Pontomega. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@pontomega.com.br</authorEmail>
+	<authorUrl>www.pontomega.com.br</authorUrl>
+
+	<namespace path="src">Pontomega\Component\ExtensionsCreator</namespace>
+
+	<files folder="site/">
+		<folder>src</folder>
+	</files>
+
+	<administration>
+		<menu>COM_EXTENSIONSCREATOR</menu>
+		<files folder="admin/">
+			<folder>services</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+	</administration>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Pontomega Updates">https://raw.githubusercontent.com/uziel/pontomega-extensions-creator/master/updates.xml</server>
+	</updateservers>
+</extension>

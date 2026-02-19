@@ -1,0 +1,34 @@
+<?php echo '<?xml version="1.0" encoding="utf-8"?>'; ?>
+<extension type="template" client="{{client}}" method="upgrade">
+    <name>{{element}}</name>
+    <version>{{version}}</version>
+    <description>{{description}}</description>
+    <author>{{author}}</author>
+    <creationDate>{{creationDate}}</creationDate>
+    <copyright>{{copyright}}</copyright>
+    <license>{{license}}</license>
+    <authorEmail>{{authorEmail}}</authorEmail>
+    <authorUrl>{{authorUrl}}</authorUrl>
+
+    <files>
+        <filename>index.php</filename>
+        <filename>templateDetails.xml</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>images</folder>
+    </files>
+
+    <positions>
+        <position>top</position>
+        <position>menu</position>
+        <position>banner</position>
+        <position>content-top</position>
+        <position>main-top</position>
+        <position>main-bottom</position>
+        <position>sidebar-left</position>
+        <position>sidebar-right</position>
+        <position>bottom</position>
+        <position>footer</position>
+        <position>debug</position>
+    </positions>
+</extension>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.0" client="{{client}}" method="upgrade">
+    <name>{{element}}</name>
+    <version>{{version}}</version>
+    <description>{{description}}</description>
+    <author>{{author}}</author>
+    <creationDate>{{creationDate}}</creationDate>
+    <copyright>{{copyright}}</copyright>
+    <license>{{license}}</license>
+    <authorEmail>{{authorEmail}}</authorEmail>
+    <authorUrl>{{authorUrl}}</authorUrl>
+
+    <namespace path="src">{{namespace}}</namespace>
+
+    <files>
+        <filename module="{{element}}">{{element}}.php</filename>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+        <folder>services</folder>
+    </files>
+</extension>

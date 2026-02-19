@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+    <update>
+        <name>com_extensionscreator</name>
+        <description>Pontomega Extensions Creator Component</description>
+        <element>com_extensionscreator</element>
+        <type>component</type>
+        <version>1.0.0</version>
+        <infourl title="Pontomega Extensions Creator">https://github.com/uziel/pontomega-extensions-creator</infourl>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/uziel/pontomega-extensions-creator/archive/refs/tags/v1.0.0.zip</downloadurl>
+        </downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <maintainer>Pontomega</maintainer>
+        <maintainerurl>https://www.pontomega.com.br</maintainerurl>
+        <section>Updates</section>
+        <targetplatform name="joomla" version="5.*"/>
+        <targetplatform name="joomla" version="6.*"/>
+    </update>
+</updates>

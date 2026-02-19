@@ -1,0 +1,20 @@
+<?php echo '<?xml version="1.0" encoding="utf-8"?>'; ?>
+<extension type="plugin" group="{{group}}" method="upgrade">
+    <name>{{element}}</name>
+    <version>{{version}}</version>
+    <description>{{description}}</description>
+    <author>{{author}}</author>
+    <creationDate>{{creationDate}}</creationDate>
+    <copyright>{{copyright}}</copyright>
+    <license>{{license}}</license>
+    <authorEmail>{{authorEmail}}</authorEmail>
+    <authorUrl>{{authorUrl}}</authorUrl>
+
+    <namespace path="src">{{namespace}}</namespace>
+
+    <files>
+        <filename plugin="{{lowerName}}">{{lowerName}}.php</filename>
+        <folder>src</folder>
+        <folder>services</folder>
+    </files>
+</extension>

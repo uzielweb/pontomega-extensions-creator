@@ -1,0 +1,26 @@
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Dependencies
+node_modules/
+vendor/
+
+# Logs and Temp
+logs/
+tmp/
+*.log
+
+# Generated Files
+admin/output/
+*.zip
+*.tar.gz
+*.gz
+
+# Local Dev Scripts
+test_gen.php
+.env
