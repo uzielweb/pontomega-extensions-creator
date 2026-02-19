@@ -49,7 +49,8 @@ This script acts as a mock Joomla environment. It generates extensions into `adm
 -   If `test_gen.php` passes, verify the contents of `admin/output/`.
 
 ### 4. Localization
--   Alwys use `JText::_('KEY')` in PHP files.
+-   Always use `Text::_('KEY')` in PHP files.
+-   Import: `use Joomla\CMS\Language\Text;`
 -   Add keys to:
     -   `admin/language/en-GB/com_extensionscreator.ini`
     -   `admin/language/pt-BR/com_extensionscreator.ini`
